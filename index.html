@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Bootstrap (optional) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    :root{
+      --accent: #6c63ff;
+      --muted: #f4f6fb;
+    }
+    body{
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      display:flex;
+      flex-direction:column;
+      min-height:100vh;
+      margin:0;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: url("https://images.unsplash.com/photo-1673986864050-12e3c2b6c02e?q=80&w=1920&auto=format&fit=crop") no-repeat center center fixed;
+      background-size: cover;
+      color: #fff; /* টেক্সট যাতে ব্যাকগ্রাউন্ডের উপর পড়তে দেখা যায় */
+    }
+    .container{
+      max-width:900px;
+      margin:48px auto;
+      padding:0 16px;
+      flex:1;
+    }
+    .profile {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .profile img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    
+    /* DECORATIVE SECTION (before contact form) */
+    .deco-banner{
+      position:relative;
+      background: linear-gradient(120deg, rgba(108,99,255,0.12), rgba(108,99,255,0.05));
+      border-radius:16px;
+      overflow:hidden;
+      padding:22px;
+      margin-bottom:22px;
+      box-shadow: 0 8px 30px rgba(16,24,40,0.04);
+      display:flex;
+      gap:18px;
+      align-items:center;
+    }
+    .deco-banner .deco-image{
+      flex:0 0 160px;
+      height:110px;
+      border-radius:12px;
+      overflow:hidden;
+      transform: rotate(-6deg);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      border:4px solid rgba(255,255,255,0.6);
+    }
+    .deco-banner .deco-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    .deco-banner .deco-text{
+      flex:1;
+      min-width:0;
+    }
+    .deco-banner h4{
+      margin:0 0 6px 0;
+      font-size:18px;
+      color: #242424;
+    }
+    .deco-banner p{
+      margin:0;
+      color:#4b5563;
+      font-size:14px;
+      line-height:1.4;
+    }
+
+    /* playful floating shapes */
+    .deco-banner::before,
+    .deco-banner::after{
+      content:"";
+      position:absolute;
+      border-radius:50%;
+      opacity:0.12;
+      pointer-events:none;
+    }
+    .deco-banner::before{
+      width:140px;
+      height:140px;
+      right:-40px;
+      top:-40px;
+      background:var(--accent);
+      transform: rotate(20deg);
+    }
+    .deco-banner::after{
+      width:90px;
+      height:90px;
+      left:-30px;
+      bottom:-30px;
+      background:#ff6b6b;
+      opacity:0.08;
+    }
+
+    .contact-form{
+      background:white;
+      padding:20px;
+      border-radius:12px;
+      box-shadow:0 6px 20px rgba(16,24,40,0.04);
+    }
+
+    footer{
+      text-align:center;
+      padding:14px 8px;
+      background:#0f1724;
+      color:#fff;
+      margin-top:28px;
+    }
+
+    /* responsive tweaks */
+    @media (max-width:600px){
+      .deco-banner{flex-direction:column; align-items:flex-start;}
+      .deco-banner .deco-image{width:100%; height:160px; transform: rotate(0deg);}
+    }
+  </style>
+</head>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown link
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</header>
+<body class="bg-dark">
+
+<div class="container">
+  <!-- Profile Section -->
+  <div class="profile">
+    <img src="images/me.jpg" alt="My Photo">
+    <h2>Your Name</h2>
+    <p>
+      <h1>Assalamu-alikum!</h1>Hello! I am Mohaiminul Islam Zim, a passionate web developer skilled in 
+      <strong>HTML5, CSS, JavaScript, PHP, Laravel, Database</strong> and more.  
+      I enjoy building modern, responsive, and user-friendly websites.  
+      This portfolio represents my skills and projects.
+    </p>
+</div>
+
+<div class="deco-banner" aria-hidden="false">
+      <div class="deco-image">
+      <img src="Images/ai2.jpg" alt="decorative image">
+      </div>
+      <div class="deco-text">
+        <h4>Creative Touch — A Little Aulabaul</h4>
+        <p>
+          A playful decorative banner using your picture to add personality before the contact form.
+          It makes the page stand out — rotate, shadow, and soft color blobs help create that quirky look.
+        </p>
+      </div>
+</div>
+
+  <!-- Contact Form -->
+  <div class="row">
+    <div class="col-7">
+    <div class="contact-form" style="width: 100%;">
+    <h3>Contact Me</h3>
+    <form>
+      <div class="mb-3">
+        <label class="form-label">Name</label>
+        <input type="text" class="form-control" placeholder="Enter your name" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Email</label>
+        <input type="email" class="form-control" placeholder="Enter your email" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Message</label>
+        <textarea class="form-control" rows="4" placeholder="Write your message" required></textarea>
+      </div>
+      <button type="submit" class="btn btn-dark">Send Message</button>
+    </form>
+  </div>
+</div>
+
+<div class="col-5 d-flex justify-content-center align-items-center">
+ 
+<img src="Images/ai.jpg" alt="MI Arts"
+     style="width:200px; height:200px; border-radius:50%; object-fit:cover;">
+</div>
+  </div>
+  </div>
+
+<div class="container text-center mt-4">
+  <a href="https://facebook.com/mohaiminulislam4042/" target="_blank" class="btn btn-primary m-2">
+    <i class="fab fa-facebook"></i> Facebook
+  </a>
+  <a href="https://youtube.com/" target="_blank" class="btn btn-danger m-2">
+    <i class="fab fa-youtube"></i> YouTube
+  </a>
+  <a href="https://instagram.com/mohaiminulislam4042/" target="_blank" class="btn btn-warning m-2">
+    <i class="fab fa-instagram"></i> Instagram
+  </a>
+</div>
+
+<footer style="height: 3%; width: 100%; background-color: rgb(100, 100, 100); padding: 10px; text-align: center; border-radius: 2px;">&copy;Copyright Mohaiminul Islam Zim</footer>
+
+<script>
+    
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
